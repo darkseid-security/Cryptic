@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-primary">
+	<head>
+		<title>Encrypt</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.min.css') }}">
+		<link rel="icon" href="{{ url_for('static', filename='img/message.png') }}">
+		<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+	    
+	<div id="nav" class="is-max-widescreen has-background-white  navbar pr-4">
+    <b id="cryptic" class="pl-5 is-size-1 has-text-right level-right">Cryptic</b>
+    <a id="link" class="pr-5 has-text-right level-right" href="/">Encrypt</a>
+    <a id="xx" class="pr-5 has-text-right level-right" href="/decrypt">Decrypt</a>
+    <a id="xx" class="pr-5 has-text-right level-right" href="/upload">Upload</a>
+    <a id="xx" class="pr-5 has-text-right level-right" href="/stegohide">Stegonography</a>
+    
+    <a id="fg" role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+</a>
+ 
+<div class="navbar-menu" id="navMenu">
+<br><br><br><br><br>
+  <center id="menu"><a class="button is-rounded is-primary is-large is-fullwidth has-text-white is-size-1" id="links" href="/" >Encrypt</a></center>
+  <center id="decrypt-link"><a class="button is-rounded is-large is-primary is-fullwidth has-text-white is-size-1" id="links" href="/decrypt" >Decrypt</a></center>
+  <center id="upload-link"><a class="button is-rounded is-large is-fullwidth is-primary has-text-white is-size-1" href="/upload" id="links">Upload</a></center>
+  <center id="upload-link"><a class="button is-rounded is-fullwidth is-primary has-text-white is-size-1" id="links" href="/stegohide"  id="upload-link">Stegonography</a></center>
+</div>
+  
+  <script>
+ document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});
+
+
+</script>
+    </div>
+    </div>  
+	    <center>
+	    <div class="tile">
+        <div class="tile is-parent is-vertical">
+        <div class="tile is-child box">
+	    <h1 id="heading" class="is-size-2">Encrypt Message with AES-GCM</h1>
+	    
+	    <form action="/keys" method="POST">
+	    <div class="field mt-5">
+        <p class="control has-icons-left">
+        <input id="encryption_key"  class="input is-primary is-large has-text-black" type="text" placeholder="Encryption Key" value="{{keygen}}" disabled>
+        <button id="gen" class="ml-1 button is-large has-text-white">&#8634;</button>
+        <span id="lock" class="icon is-small is-left">
+        <i class="fas fa-key"></i>
+        </span>
+        </p>
+        </div>
+	    
+	    <div class="field mt-3">
+        <p class="control has-icons-left">
+        <input class="input is-primary is-large is-fullwidth has-text-black" type="text" name="IV" placeholder="Generate IV" value="{{iv}}" disabled>
+        <span id="lock" class="icon is-small is-left">
+        <i class="fas fa-prescription"></i>
+        </span>
+        </p>
+        </div>
+        <div class="select is-primary is-large is-fullwidth" >
+	    <select class="has-text-black" id="key-length" name="key-length">
+        <option value="128">128</option>
+        <option value="192">192</option>
+        <option value="256">256</option>
+        </select>
+        </div>
+	    </form>
+	   
+	    <form action="/encrypt" method="POST">
+	    <div class="field mt-3 ">
+        <p class="control has-icons-left">
+        <input id="cipher-text" class="input is-primary is-large is-fullwidth" type="text" name="ciphertext" placeholder="Message to Encrypt">
+        <span id="lock-text" class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+        </span>
+        </p>
+	    <div>
+	    <br>
+	    <button class="button is-primary is-fullwidth is-large mt-5 mb-4" type="submit">Encrypt</button>
+	    </div>
+	    </form>
+
+        <br><br>
+	    <h2 style="font-weight:bold;" class="is-size-4">Encryption Key: {{warning}} {{key}}</h2>
+	    <h2 style="font-weight:bold;" class="is-size-4"">IV: {{iv4}}</h2>
+	    <h2 style="font-weight:bold;" class="is-size-4">Encrypted Message: {{ciphertext}}</h2>
+	    <br>
+	    <br>
+	 
+	    
+	    </div>
+	    </div>
+	    </div>
+	    </div>
+		 </center>
+	</body>
+</html>
