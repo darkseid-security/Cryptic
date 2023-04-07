@@ -302,8 +302,9 @@
 		
 		
 		<br><br>
-		<h2 id="en" class="mb-4  is-centered" >{{stego_file_key}} </h2>
+		<h2 id="en" class="mb-1  is-centered" >{{stego_file_key}} </h2>
 		<h2 id="ext">{{filetype}}</h2>
+	    	<h2 class="mb-1" style="color:red;font-weight:bold;">{{upload_failed}}</h2>
 		<a download href="{{ url_for('static', filename='encrypted/')}}{{image_src}}" id="status">{{stego_file_download}}</a>
 		<h2>{{mesaage}}</h2>
 		
