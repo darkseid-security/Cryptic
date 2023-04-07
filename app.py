@@ -317,7 +317,7 @@ def stegoextract_file():
         crypto_steganography = CryptoSteganography(get_key)
         try:
             secret = crypto_steganography.retrieve(sec_path)
-            with open('decrypted/Extracted/' + random_filename + '/' + random_filename + '.' + get_format, 'wb') as f:
+            with open(sec_path + '.' + get_format, 'wb') as f:
                 f.write(secret)
             response = 'File has been Extracted'
         except:
