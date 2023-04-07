@@ -309,6 +309,7 @@ def stegoextract_file():
         random_filename = ''.join(random.choice(letters) for i in range(10))
         create_directory = os.mkdir('decrypted/Extracted/' + random_filename)
         sec_filename = secure_filename(uploaded_file.filename)
+        secure_format = secure_filename(get_format)
         uploaded_image = 'decrypted/Extracted/' + random_filename + '/' + sec_filename
         sec_path = 'decrypted/Extracted/' + random_filename + '/' + random_filename
         uploaded_file.save('decrypted/Extracted/' + random_filename + '/' + sec_filename)
@@ -317,13 +318,13 @@ def stegoextract_file():
         crypto_steganography = CryptoSteganography(get_key)
         try:
             secret = crypto_steganography.retrieve(sec_path)
-            with open(sec_path + '.' + get_format, 'wb') as f:
+            with open(sec_path + '.' + secure_format, 'wb') as f:
                 f.write(secret)
             response = 'File has been Extracted'
         except:
             response = "Decryption Failed can't extract secret file"
             pass
-        return render_template("stego.html",input_key=input_key,response=response,file_location='decrypted/Extracted/' + random_filename + '/' + random_filename + '.' + get_format)
+        return render_template("stego.html",input_key=input_key,response=response,file_location='decrypted/Extracted/' + random_filename + '/' + random_filename + '.' + secure_format)
     else:
         auth = "Not Authorized to upload files"
         return render_template("stego.html",filetype=auth)
