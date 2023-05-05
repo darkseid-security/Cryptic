@@ -1,0 +1,218 @@
+
+html {
+background-image: url("../img/api.jpeg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height:150%;
+}
+
+.tile {
+width:1100px;
+margin-top: 4%;
+}
+
+#heading {
+font-weight:bold;
+margin-top:50px;
+padding-bottom:20px;
+}
+
+#nav {
+height:100px;
+
+
+}
+
+#lock {
+width:55px;
+color:black;
+}
+
+#link {
+margin-left: 72%;
+color:#00d1b2;
+}
+
+#status {
+font-weight:bold;
+color:#00d1b2;
+}
+
+#status:hover {
+color:black;
+}
+
+#xx {
+color:#00d1b2;
+
+}
+
+#xx:hover {
+color: black;
+
+}
+
+#link:hover {
+color: black;
+
+}
+
+#lock-text {
+width:55px;
+padding-top:40px;
+color:black;
+
+
+}
+
+
+#submit {
+font-size:20px;
+font-weight:bold;
+}
+
+
+#refresh {
+cursor: pointer;
+background:#66CDAA;
+color:white;
+border:none;
+font-weight: bold;
+font-size: 14px;
+border-radius: 5px;
+width: 80px;
+padding-bottom: 10px;
+
+}
+
+a {
+text-decoration: none;
+
+}
+
+
+#iv {
+display:block;
+
+}
+
+#key-length {
+text-align:center;
+font-weight:bold;
+} 
+
+#encrypt {
+margin-top:15px;
+font-weight: bold;
+font-size: 20px;
+width:200px;
+}
+
+
+input::placeholder {
+color:black;
+
+}
+
+#encryption_key {
+width:980px;
+
+}
+
+#gen {
+background:#bb85ff
+}
+
+#cipher-text {
+height:100px;
+}
+
+#test {
+margin-top:100px;
+
+}
+
+#navMenu,#menu,#upload-link,#decrypt-link {
+visibility: hidden;
+}
+
+@media only screen and (min-width:2400px) {
+#link {
+margin-left:79%;
+
+}
+}
+
+
+@media only screen and (max-width:1000px) {
+#navMenu {
+background: white;
+height: 2500px;
+width:1200px;
+}
+
+.tile {
+margin-left:20px;
+}
+
+
+
+#navMenu,#menu,#upload-link,#decrypt-link {
+visibility: visible;
+}
+
+#nav {
+width:1200px;
+height:150px;
+}
+
+
+#fg {
+float:right;
+margin-top:20px;
+color:black;
+}
+
+
+#menu {
+margin-top:50px;
+font-size:42px;
+color:black;
+margin-bottom:20px;
+
+}
+
+#encryption_key {
+width:970px;
+
+}
+
+#links {
+color:black;
+width:80%;
+}
+
+
+#decrypt-link {
+font-size:42px;
+color:black;
+margin-bottom:20px;
+}
+
+#upload-link {
+font-size:42px;
+color:black;
+margin-bottom:20px;
+}
+
+#xx,#link {
+display:none
+
+}
+
+#cryptic {
+float:left;
+margin-top:20px;
+
+}}
