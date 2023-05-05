@@ -4,7 +4,7 @@
 
 [CRYPTIC V1.3]
 
-<img src="https://github.com/darkseid-security/Cryptic/blob/main/static/img/spider.png" height=400> 
+<center><img src="https://github.com/darkseid-security/Cryptic/blob/main/static/img/spider.png" height=400></center>
 
 A Flask web application that allows you to encrypt/decrypt text with AES-GCM 128/192/256 bits.
 Built in function allows you to upload files to the server and encrypt/decrypt them with AES-128-CBC.
