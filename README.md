@@ -1,6 +1,6 @@
 # Cryptic
 
-<img src="https://github.com/darkseid-security/Cryptic/blob/main/screenshots/Cryptic3.png">
+#<img src="https://github.com/darkseid-security/Cryptic/blob/main/screenshots/Cryptic3.png">
 
 [CRYPTIC V1.3]
 
