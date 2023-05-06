@@ -46,6 +46,7 @@ Run App
 
 Security Issues
 =================
+- Replace private key with own use long string that can't be bruteforced
 - If deploying on a VPS buy domain name and set up TLS cert with letsencrypt set port to port 80
 - Directory static/encrypted is Public filenames could be bruteforced however filenames are 10 character long and encrypted with AES-128-CBC and uses a 128 bit key
 - Directory static/stego is public however filenames are 10 character secret messages are encrypted with AES-256 with a 128 bit key 
