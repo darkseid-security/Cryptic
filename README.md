@@ -41,7 +41,7 @@ Run App
 - Run pip3 install -r requirements.txt
 - if cryptosteganography fails install manually git clone https://github.com/computationalcore/cryptosteganography.git - don't install from pip issue with pillow
 - Run command openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365 to generate TLS certificate
-- To start app run gunicorn --certfile cert.pem --keyfile key.pem -b 0.0.0.0:80 app:app
+- To start app run gunicorn --certfile cert.pem --keyfile key.pem -b 0.0.0.0:80 app:app # comment out line 336 to run gunicorn
 
 
 Security Issues
