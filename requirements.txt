@@ -6,3 +6,4 @@ cryptosteganography
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
 pillow>=10.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
 werkzeug>=2.3.8 # not directly required, pinned by Snyk to avoid a vulnerability
+pycryptodomex>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
